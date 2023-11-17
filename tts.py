@@ -2,7 +2,7 @@ from pathlib import Path
 import openai
 
 # Set your OpenAI API key directly in the script
-openai.api_key = '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'
+openai.api_key = ''
 
 # Define the path for the output speech file
 speech_file_path = Path(__file__).parent / "speech.mp3"
