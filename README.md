@@ -74,10 +74,10 @@ To run the TTS script (`tts.py`), follow these steps:
 
 1. Ensure that the virtual environment is activated.
 
-2. Set your OpenAI API key in the `tts.py` script:
+2. Set your OpenAI API key as an environment variable:
 
-```python
-openai.api_key = 'your-api-key'
+```bash
+export OPENAI_API_KEY='your-api-key'
 ```
 
 3. Run the TTS script:

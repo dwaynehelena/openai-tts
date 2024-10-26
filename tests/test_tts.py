@@ -6,11 +6,11 @@ import logging
 
 class TestTTS(unittest.TestCase):
 
-    @patch('openai.Audio.speech.create')
+    @patch('openai.Audio.create')
     def test_speech_creation_success(self, mock_create):
-        # Mock the response of the openai.Audio.speech.create function
+        # Mock the response of the openai.Audio.create function
         mock_response = MagicMock()
-        mock_response.stream_to_file = MagicMock()
+        mock_response['audio'] = b'Test audio content'
         mock_create.return_value = mock_response
 
         # Call the function to create speech
@@ -24,11 +24,11 @@ class TestTTS(unittest.TestCase):
         # Check if the speech file content is correct
         with open(speech_file_path, 'rb') as f:
             content = f.read()
-            self.assertEqual(content, mock_response.stream_to_file.call_args[0][0].read())
+            self.assertEqual(content, mock_response['audio'])
 
-    @patch('openai.Audio.speech.create')
+    @patch('openai.Audio.create')
     def test_speech_creation_failure(self, mock_create):
-        # Mock the response of the openai.Audio.speech.create function to raise an error
+        # Mock the response of the openai.Audio.create function to raise an error
         mock_create.side_effect = openai.error.OpenAIError("Test error")
 
         # Call the function to create speech
