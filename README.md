@@ -96,3 +96,7 @@ To apply the Android metal style to the web UI, follow these steps:
 3. The `src/App.js` and `src/components/TTSForm.js` files should apply the Android metal style classes to the relevant elements.
 
 The Android metal style provides a modern and sleek look to the web UI, enhancing the user experience.
+
+## Server Response
+
+Ensure that the server handling the `/tts` endpoint returns a JSON response. This will prevent errors such as "Unexpected token '<', "<!DOCTYPE "... is not valid JSON" from occurring when the server response is HTML instead of JSON.
