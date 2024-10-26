@@ -15,6 +15,7 @@ function SearchForm() {
     });
     const data = await response.json();
     setSearchResults(data.results);
+    window.open('/search-results', '_blank');
   };
 
   return (
