@@ -32,10 +32,10 @@ function TTSForm() {
   };
 
   return (
-    <div>
-      <h1>Text to Speech</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="text">Enter text:</label>
+    <div className="android-metal-form-container">
+      <h1 className="android-metal-title">Text to Speech</h1>
+      <form onSubmit={handleSubmit} className="android-metal-form">
+        <label htmlFor="text" className="android-metal-label">Enter text:</label>
         <textarea
           id="text"
           name="text"
@@ -43,17 +43,18 @@ function TTSForm() {
           cols="50"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          className="android-metal-textarea"
         />
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit" className="android-metal-button">Submit</button>
       </form>
       {speechFile && (
         <div>
-          <p>Download your speech file: <a href={speechFile}>speech.mp3</a></p>
+          <p>Download your speech file: <a href={speechFile} className="android-metal-link">speech.mp3</a></p>
         </div>
       )}
       {errorMessage && (
-        <div>
+        <div className="android-metal-error-message">
           <p>{errorMessage}</p>
         </div>
       )}

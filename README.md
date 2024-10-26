@@ -86,3 +86,13 @@ set NODE_OPTIONS=--openssl-legacy-provider
 ```
 
 Alternatively, you can add this environment variable to your `package.json` scripts to ensure it is set whenever you run your application.
+
+## Applying Android Metal Style
+
+To apply the Android metal style to the web UI, follow these steps:
+
+1. Ensure that the `src/styles/android-metal.css` file is included in your project.
+2. The `public/index.html` file should include a link to the `android-metal.css` file in the head section.
+3. The `src/App.js` and `src/components/TTSForm.js` files should apply the Android metal style classes to the relevant elements.
+
+The Android metal style provides a modern and sleek look to the web UI, enhancing the user experience.
