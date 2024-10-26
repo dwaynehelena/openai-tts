@@ -100,3 +100,36 @@ A new search function has been added to the application. This function allows yo
 2. Enter your search query in the input field labeled "Search README.md".
 3. Click the "Search" button to perform the search.
 4. The search results will be displayed below the search form.
+
+## Using a Personal Access Token for Deployment
+
+To deploy the application using GitHub Actions, you need to use a personal access token instead of the default `GITHUB_TOKEN`. This is because the default `GITHUB_TOKEN` does not have sufficient permissions to push to the `gh-pages` branch.
+
+### Creating a Personal Access Token
+
+1. Go to your GitHub account settings.
+2. Navigate to "Developer settings" and then "Personal access tokens".
+3. Click on "Generate new token".
+4. Give your token a descriptive name, such as "GitHub Actions Deployment Token".
+5. Select the `repo` scope to grant the token access to your repositories.
+6. Click "Generate token" and copy the token. Make sure to store it securely as you will not be able to see it again.
+
+### Updating the Deployment Instructions
+
+1. Open the `.github/workflows/deploy.yml` file.
+2. Replace the `github_token` secret with your personal access token secret:
+
+```yaml
+with:
+  github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  publish_dir: ./build
+```
+
+3. Add a step to set up the personal access token before the deployment step:
+
+```yaml
+- name: Set up Personal Access Token
+  run: echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> $GITHUB_ENV
+```
+
+By following these steps, you will ensure that the GitHub Actions bot has the necessary permissions to push to the `gh-pages` branch.
