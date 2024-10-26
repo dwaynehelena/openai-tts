@@ -17,6 +17,12 @@ You also need to install the required npm packages. You can do this by running t
 npm install
 ```
 
+The required npm packages are listed in the `package.json` file and include:
+
+- react
+- react-dom
+- react-scripts
+
 ## Setting Up the Development Environment
 
 To set up the development environment, follow these steps:
