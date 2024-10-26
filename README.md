@@ -89,3 +89,14 @@ To use the OpenAI key in the web UI, follow these steps:
 3. Enter the text you want to convert to speech in the input field labeled "Enter text".
 4. Click the "Submit" button to send the request to the server.
 5. The server will process the request and return the speech file, which you can download from the provided link.
+
+## Search Function
+
+A new search function has been added to the application. This function allows you to search the `README.md` file for specific information.
+
+### How to Use the Search Function
+
+1. Open the application in your web browser.
+2. Enter your search query in the input field labeled "Search README.md".
+3. Click the "Search" button to perform the search.
+4. The search results will be displayed below the search form.
