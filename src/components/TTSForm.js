@@ -66,6 +66,7 @@ function TTSForm({ openaiKey }) {
           value={openaiKey}
           onChange={(e) => setOpenaiKey(e.target.value)}
           className="android-metal-input"
+          maxLength="256"
         />
         <br />
         <button type="submit" className="android-metal-button">Submit</button>
