@@ -19,12 +19,15 @@ function TTSForm() {
         body: JSON.stringify({ text }),
       });
 
-      const data = await response.json();
-
-      if (data.error) {
-        setErrorMessage(data.error);
+      if (response.ok) {
+        const data = await response.json();
+        if (data.error) {
+          setErrorMessage(data.error);
+        } else {
+          setSpeechFile(data.speech_file);
+        }
       } else {
-        setSpeechFile(data.speech_file);
+        setErrorMessage('An error occurred: ' + response.statusText);
       }
     } catch (error) {
       setErrorMessage('An error occurred: ' + error.message);
