@@ -80,3 +80,16 @@ a:hover {
   font-weight: bold;
   margin-top: 10px;
 }
+
+.android-metal-progress-bar {
+  height: 10px;
+  background-color: #ff9800;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.android-metal-status-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
