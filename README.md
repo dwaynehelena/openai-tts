@@ -17,6 +17,12 @@ You also need to install the required npm packages. You can do this by running t
 npm install
 ```
 
+The required npm packages are listed in the `package.json` file and include:
+
+- react
+- react-dom
+- react-scripts
+
 ## Setting Up the Development Environment
 
 To set up the development environment, follow these steps:
@@ -34,11 +40,9 @@ cd openai-tts
 npm install
 ```
 
-## Running the Code
+2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
-To run the application, follow these steps:
-
-1. Run the application:
+## Running the React Application
 
 ```bash
 npm start
@@ -66,23 +70,10 @@ This will create a speech file at the specified path.
 
 ## Running CTRF Annotations
 
-To run CTRF annotations, follow these steps:
-
-1. Run the CTRF annotations:
-
-```bash
-npx github-actions-ctrf report.json
-```
-
-## GitHub Action Workflow for CTRF Annotations
-
-This project includes a GitHub Action workflow for running CTRF annotations. The workflow is defined in the `.github/workflows/greetings.yml` file and is triggered on push, pull request, and issue events.
 
 ## Addressing OpenSSL Error
 
-If you encounter the "error:0308010C:digital envelope routines::unsupported" error, it is likely due to compatibility issues between OpenSSL versions and Node.js. To resolve this, you can set the `NODE_OPTIONS` environment variable as follows:
 
-### On Unix-based systems (Linux, macOS)
 
 ```bash
 export NODE_OPTIONS=--openssl-legacy-provider
