@@ -6,5 +6,10 @@
     "vscode": {
       "extensions": ["ms-python.python"]
     }
+  },
+  "tasks": {
+    "test": "pytest",
+    "build": "pip install -r requirements.txt",
+    "launch": "flask run"
   }
 }
