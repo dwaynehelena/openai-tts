@@ -79,3 +79,13 @@ The Android metal style provides a modern and sleek look to the web UI, enhancin
 ## Server Response
 
 Ensure that the server handling the `/tts` endpoint returns a JSON response. This will prevent errors such as "Unexpected token '<', "<!DOCTYPE "... is not valid JSON" from occurring when the server response is HTML instead of JSON.
+
+## Entering the OpenAI Key in the Web UI
+
+To use the OpenAI key in the web UI, follow these steps:
+
+1. Open the application in your web browser.
+2. Enter your OpenAI key in the input field labeled "Enter OpenAI Key".
+3. Enter the text you want to convert to speech in the input field labeled "Enter text".
+4. Click the "Submit" button to send the request to the server.
+5. The server will process the request and return the speech file, which you can download from the provided link.

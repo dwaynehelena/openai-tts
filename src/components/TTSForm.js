@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TTSForm() {
+function TTSForm({ openaiKey }) {
   const [text, setText] = useState('');
   const [speechFile, setSpeechFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
@@ -19,6 +19,7 @@ function TTSForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${openaiKey}`,
         },
         body: JSON.stringify({ text }),
       });
@@ -55,6 +56,16 @@ function TTSForm() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="android-metal-textarea"
+        />
+        <br />
+        <label htmlFor="openaiKey" className="android-metal-label">Enter OpenAI Key:</label>
+        <input
+          type="text"
+          id="openaiKey"
+          name="openaiKey"
+          value={openaiKey}
+          onChange={(e) => setOpenaiKey(e.target.value)}
+          className="android-metal-input"
         />
         <br />
         <button type="submit" className="android-metal-button">Submit</button>
