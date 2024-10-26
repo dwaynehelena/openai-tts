@@ -1,31 +1,28 @@
-from pathlib import Path
+import sys
 import openai
-import logging
+from openai import OpenAI
 import os
 
-# Set your OpenAI API key from an environment variable
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def create_speech(speech_file_path):
     try:
-        # Create the speech
-        response = openai.Audio.create(
-            model="whisper-1",
-            voice="alloy",
-            input="Ladies and gentlemen, Welcome to gptswarm.net"
-        )
-        # Save the speech to a file
-        with open(speech_file_path, 'wb') as f:
-            f.write(response['audio'])
-        logging.info("Speech created and saved successfully.")
-    except openai.error.OpenAIError as e:
-        logging.error(f"An error occurred while creating the speech: {e}")
+        with open(speech_file_path, "rb") as audio_file:
+            response = client.audio.transcriptions.create(
+                file=audio_file,
+                model="whisper-1"
+            )
+        print(response)
+        return response
+    except openai.OpenAIError as e:
+        print(f"An error occurred: {e}")
+    except FileNotFoundError as e:
+        print(f"File not found: {e}")
 
-# Define the path for the output speech file
-speech_file_path = Path(__file__).parent / "speech.mp3"
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python transcribe.py <path_to_speech_file>")
+        sys.exit(1)
 
-# Call the function to create speech
-create_speech(speech_file_path)
+    speech_file_path = sys.argv[1]
+    create_speech(speech_file_path)
