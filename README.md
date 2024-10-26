@@ -73,7 +73,7 @@ This will create a speech file at the specified path.
 
 ## Addressing OpenSSL Error
 
-
+### On Unix
 
 ```bash
 export NODE_OPTIONS=--openssl-legacy-provider
