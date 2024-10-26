@@ -3,7 +3,7 @@ import openai
 import logging
 
 # Set your OpenAI API key directly in the script
-openai.api_key = 'your-api-key-here'
+openai.api_key = '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'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
