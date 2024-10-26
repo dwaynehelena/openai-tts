@@ -1,10 +1,5 @@
 {
   "name": "openai-tts",
-  "version": "1.0.0",
-  "description": "A React application for Text to Speech",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -14,7 +9,5 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3"
   },
-  "devDependencies": {},
-  "author": "",
-  "license": "ISC"
+
 }

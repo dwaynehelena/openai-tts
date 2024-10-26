@@ -40,23 +40,9 @@ cd openai-tts
 npm install
 ```
 
-## Running the Code
-
-To run the application, follow these steps:
-
-1. Run the application:
-
-```bash
-npm start
-```
-
 2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
 ## Running the React Application
-
-To run the React application, follow these steps:
-
-1. Run the React application:
 
 ```bash
 npm start
@@ -84,14 +70,19 @@ This will create a speech file at the specified path.
 
 ## Running CTRF Annotations
 
-To run CTRF annotations, follow these steps:
 
-1. Run the CTRF annotations:
+## Addressing OpenSSL Error
+
+
 
 ```bash
-npx github-actions-ctrf report.json
+export NODE_OPTIONS=--openssl-legacy-provider
 ```
 
-## GitHub Action Workflow for CTRF Annotations
+### On Windows
 
-This project includes a GitHub Action workflow for running CTRF annotations. The workflow is defined in the `.github/workflows/greetings.yml` file and is triggered on push, pull request, and issue events.
+```cmd
+set NODE_OPTIONS=--openssl-legacy-provider
+```
+
+Alternatively, you can add this environment variable to your `package.json` scripts to ensure it is set whenever you run your application.
