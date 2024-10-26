@@ -4,7 +4,7 @@
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python"]
+      "extensions": []
     }
   }
 }

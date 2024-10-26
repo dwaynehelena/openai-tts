@@ -2,7 +2,7 @@
 
 ## Purpose of the Project
 
-This project demonstrates the use of Python to create a simple application. The application includes basic functionalities such as routing, templates, and static files.
+This project demonstrates the use of React Native to create a simple application. The application includes basic functionalities such as routing, templates, and static files.
 
 ## Prerequisites and Dependencies
 
@@ -49,59 +49,6 @@ npm start
 ```
 
 2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
-
-## Running the TTS Script
-
-To run the TTS script (`tts.py`), follow these steps:
-
-1. Set your OpenAI API key as an environment variable:
-
-```bash
-export OPENAI_API_KEY='your-api-key'
-```
-
-2. Run the TTS script:
-
-```bash
-python tts.py <text> <path_to_speech_file>
-```
-
-This will create a speech file at the specified path.
-
-## Running the Flask Server
-
-To run the Flask server (`server.py`), follow these steps:
-
-1. Set your OpenAI API key as an environment variable:
-
-```bash
-export OPENAI_API_KEY='your-api-key'
-```
-
-2. Install the required Python packages:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the Flask server:
-
-```bash
-python server.py
-```
-
-This will start the Flask server on `http://localhost:5000`.
-
-## Integrating the React Web UI with the Server
-
-To integrate the React web UI with the Flask server, follow these steps:
-
-1. Ensure that the Flask server is running on `http://localhost:5000`.
-2. Update the `src/components/TTSForm.js` file to send requests to the Flask server's `/tts` endpoint.
-3. The React web UI will send a POST request to the `/tts` endpoint with the text input and handle the server response to display the speech file link or error message.
-
-## Running CTRF Annotations
-
 
 ## Addressing OpenSSL Error
 
