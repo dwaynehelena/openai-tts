@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+</head>
+<body>
+    <h1>Text to Speech</h1>
+    <form action="/tts" method="post">
+        <label for="text">Enter text:</label>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result">
+        {% if speech_file %}
+            <p>Download your speech file: <a href="{{ speech_file }}">speech.mp3</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
