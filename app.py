@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 from tts import create_speech
 
@@ -12,8 +12,18 @@ def index():
 def tts():
     text = request.form['text']
     speech_file_path = 'speech.mp3'
-    create_speech(text, speech_file_path)
-    return send_file(speech_file_path, as_attachment=True)
+    try:
+        response = create_speech(text, speech_file_path)
+        if response:
+            return jsonify({'message': 'Speech created successfully', 'speech_file': url_for('download_speech', filename='speech.mp3')})
+        else:
+            return jsonify({'error': 'Failed to create speech'}), 500
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/download/<filename>')
+def download_speech(filename):
+    return send_from_directory(directory='.', filename=filename)
 
 if __name__ == '__main__':
     app.run(debug=True)

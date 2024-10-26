@@ -16,7 +16,7 @@ class TestTTS(unittest.TestCase):
         # Call the function to create speech
         from tts import create_speech
         speech_file_path = Path(__file__).parent.parent / "speech.mp3"
-        create_speech("Test text", speech_file_path)
+        response = create_speech("Test text", speech_file_path)
 
         # Check if the speech file was created
         self.assertTrue(speech_file_path.exists())
@@ -25,6 +25,9 @@ class TestTTS(unittest.TestCase):
         with open(speech_file_path, 'rb') as f:
             content = f.read()
             self.assertEqual(content, mock_response['audio'])
+
+        # Check if the response object is correct
+        self.assertEqual(response, mock_response)
 
     @patch('openai.Audio.create')
     def test_speech_creation_failure(self, mock_create):
@@ -36,8 +39,11 @@ class TestTTS(unittest.TestCase):
         speech_file_path = Path(__file__).parent.parent / "speech.mp3"
 
         with self.assertLogs(level='ERROR') as log:
-            create_speech("Test text", speech_file_path)
-            self.assertIn("An error occurred while creating the speech: Test error", log.output[0])
+            response = create_speech("Test text", speech_file_path)
+            self.assertIn("An error occurred: Test error", log.output[0])
+
+        # Check if the response object is None
+        self.assertIsNone(response)
 
 if __name__ == '__main__':
     unittest.main()

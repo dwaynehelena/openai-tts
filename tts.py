@@ -2,8 +2,12 @@ import sys
 import openai
 from openai import OpenAI
 import os
+import logging
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 
 def create_speech(text, speech_file_path):
     try:
@@ -13,10 +17,11 @@ def create_speech(text, speech_file_path):
         )
         with open(speech_file_path, "wb") as audio_file:
             audio_file.write(response['audio'])
-        print("Audio file created successfully.")
+        logging.info("Audio file created successfully.")
         return response
     except openai.OpenAIError as e:
-        print(f"An error occurred: {e}")
+        logging.error(f"An error occurred: {e}")
+        return None
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
