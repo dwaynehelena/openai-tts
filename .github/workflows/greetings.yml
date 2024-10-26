@@ -1,6 +1,6 @@
 name: Greetings
 
-on: [pull_request_target, issues]
+on: [pull_request_target, issues,push]
 
 jobs:
   greeting:
@@ -57,3 +57,15 @@ jobs:
         files: ./coverage.xml
         flags: unittests
         name: codecov-umbrella
+
+        name: Example workflow file
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run CTRF annotations
+        run: npx github-actions-ctrf path-to-your-ctrf-report.json
+        if: always()
