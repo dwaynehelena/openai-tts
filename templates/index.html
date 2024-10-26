@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to Speech</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <h1>Text to Speech</h1>
-    <form action="/tts" method="post">
+    <form id="tts-form">
         <label for="text">Enter text:</label>
         <textarea id="text" name="text" rows="4" cols="50"></textarea>
         <br>
@@ -18,5 +19,33 @@
             <p>Download your speech file: <a href="{{ speech_file }}">speech.mp3</a></p>
         {% endif %}
     </div>
+    <div id="error-message"></div>
+    <script>
+        $(document).ready(function() {
+            $('#tts-form').on('submit', function(event) {
+                event.preventDefault();
+                var formData = {
+                    text: $('#text').val()
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/tts',
+                    data: formData,
+                    dataType: 'json',
+                    encode: true
+                })
+                .done(function(data) {
+                    if (data.error) {
+                        $('#error-message').text(data.error);
+                    } else {
+                        $('#result').html('<p>Download your speech file: <a href="' + data.speech_file + '">speech.mp3</a></p>');
+                    }
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    $('#error-message').text('An error occurred: ' + errorThrown);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
