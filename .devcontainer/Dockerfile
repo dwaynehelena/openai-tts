@@ -1,4 +1,4 @@
-FROM library/python:3.11-bookworm
+FROM node:14
 
 ARG USER=vscode
 ARG DEBIAN_FRONTEND=noninteractive
