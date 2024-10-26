@@ -4,11 +4,15 @@ function TTSForm() {
   const [text, setText] = useState('');
   const [speechFile, setSpeechFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [progress, setProgress] = useState(0);
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrorMessage('');
     setSpeechFile(null);
+    setProgress(0);
+    setStatusMessage('Starting OpenAI call...');
 
     try {
       const response = await fetch('/tts', {
@@ -25,12 +29,16 @@ function TTSForm() {
           setErrorMessage(data.error);
         } else {
           setSpeechFile(data.speech_file);
+          setProgress(100);
+          setStatusMessage('OpenAI call completed.');
         }
       } else {
         setErrorMessage('An error occurred: ' + response.statusText);
+        setStatusMessage('OpenAI call failed.');
       }
     } catch (error) {
       setErrorMessage('An error occurred: ' + error.message);
+      setStatusMessage('OpenAI call failed.');
     }
   };
 
@@ -51,6 +59,8 @@ function TTSForm() {
         <br />
         <button type="submit" className="android-metal-button">Submit</button>
       </form>
+      <div className="android-metal-progress-bar" style={{ width: `${progress}%` }}></div>
+      <div className="android-metal-status-message">{statusMessage}</div>
       {speechFile && (
         <div>
           <p>Download your speech file: <a href={speechFile} className="android-metal-link">speech.mp3</a></p>
