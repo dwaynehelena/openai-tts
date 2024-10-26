@@ -83,10 +83,10 @@ export OPENAI_API_KEY='your-api-key'
 3. Run the TTS script:
 
 ```bash
-python tts.py
+python tts.py <text> <path_to_speech_file>
 ```
 
-This will create a speech file named `speech.mp3` in the project directory.
+This will create a speech file at the specified path.
 
 ## Running the Web Interface
 
