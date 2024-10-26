@@ -68,6 +68,46 @@ flask run
 
 3. Open your web browser and navigate to `http://127.0.0.1:5000` to see the application in action.
 
+## Running the TTS Script
+
+To run the TTS script (`tts.py`), follow these steps:
+
+1. Ensure that the virtual environment is activated.
+
+2. Set your OpenAI API key in the `tts.py` script:
+
+```python
+openai.api_key = 'your-api-key'
+```
+
+3. Run the TTS script:
+
+```bash
+python tts.py
+```
+
+This will create a speech file named `speech.mp3` in the project directory.
+
+## Running the TTS Script with Bash Script
+
+To run the TTS script (`tts.py`) using the provided bash script (`run_tts.sh`), follow these steps:
+
+1. Ensure that the virtual environment is activated.
+
+2. Set your OpenAI API key in the `tts.py` script:
+
+```python
+openai.api_key = 'your-api-key'
+```
+
+3. Run the bash script:
+
+```bash
+./run_tts.sh
+```
+
+This will create a speech file named `speech.mp3` in the project directory.
+
 ## Running CTRF Annotations
 
 To run CTRF annotations, follow these steps:
