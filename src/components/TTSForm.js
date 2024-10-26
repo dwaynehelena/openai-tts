@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TTSForm({ openaiKey }) {
+function TTSForm({ openaiKey, setOpenaiKey }) {
   const [text, setText] = useState('');
   const [speechFile, setSpeechFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
