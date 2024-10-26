@@ -3,8 +3,8 @@ import TTSForm from './components/TTSForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App android-metal-container">
+      <header className="App-header android-metal-header">
         <h1>Text to Speech</h1>
       </header>
       <main>
