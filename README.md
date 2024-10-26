@@ -77,7 +77,7 @@ To run CTRF annotations, follow these steps:
 2. Run the CTRF annotations:
 
 ```bash
-npx github-actions-ctrf path-to-your-ctrf-report.json
+npx github-actions-ctrf report.json
 ```
 
 ## GitHub Action Workflow for CTRF Annotations

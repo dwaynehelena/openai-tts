@@ -71,6 +71,6 @@ jobs:
       - name: Run CTRF 
         run: pytest --ctrf report.json
         if: always()
-  - name: Run CTRF annotations
+      - name: Run CTRF annotations
         run: npx github-actions-ctrf report.json
         if: always()

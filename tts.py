@@ -3,6 +3,7 @@ import openai
 import logging
 
 # Set your OpenAI API key directly in the script
+openai.api_key = 'your-api-key-here'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
