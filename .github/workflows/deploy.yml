@@ -23,8 +23,9 @@ jobs:
 
       - name: Build project
         run: npm run build
-        - name: Set up Personal Access Token
-  run: echo "PERSONAL_ACCESS_TOKEN=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" >> $GITHUB_ENV
+
+      - name: Set up Personal Access Token
+        run: echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> $GITHUB_ENV
 
       - name: Verify Personal Access Token
         run: |
@@ -32,11 +33,6 @@ jobs:
             echo "Error: PERSONAL_ACCESS_TOKEN is not set."
             exit 1
           fi
-with:
-  github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-  publish_dir: ./build
-      - name: Set up Personal Access Token
-        run: echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
