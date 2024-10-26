@@ -1,3 +1,8 @@
 pytest
 coverage
 pytest-json-ctrf
+pylint
+flake8
+bandit
+locust
+pytest-benchmark
