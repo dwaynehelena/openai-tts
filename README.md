@@ -8,13 +8,13 @@ This project demonstrates the use of Python to create a simple application. The 
 
 Before you can run this project, you need to have the following installed on your machine:
 
-- Python 3.11
-- pip (Python package installer)
+- Node.js
+- npm (Node package manager)
 
-You also need to install the required Python packages. You can do this by running the following command:
+You also need to install the required npm packages. You can do this by running the following command:
 
 ```bash
-pip install -r requirements.txt
+npm install
 ```
 
 ## Setting Up the Development Environment
@@ -24,63 +24,39 @@ To set up the development environment, follow these steps:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/dwaynehelena/flaskapp.git
-cd flaskapp
+git clone https://github.com/dwaynehelena/openai-tts.git
+cd openai-tts
 ```
 
-2. Create a virtual environment:
+2. Install the required dependencies:
 
 ```bash
-python -m venv venv
-```
-
-3. Activate the virtual environment:
-
-- On Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-- On macOS and Linux:
-
-```bash
-source venv/bin/activate
-```
-
-4. Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
+npm install
 ```
 
 ## Running the Code
 
 To run the application, follow these steps:
 
-1. Ensure that the virtual environment is activated.
-
-2. Run the application:
+1. Run the application:
 
 ```bash
-python app.py
+npm start
 ```
 
-3. Open your web browser and navigate to `http://127.0.0.1:5000` to see the application in action.
+2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
 ## Running the TTS Script
 
 To run the TTS script (`tts.py`), follow these steps:
 
-1. Ensure that the virtual environment is activated.
-
-2. Set your OpenAI API key as an environment variable:
+1. Set your OpenAI API key as an environment variable:
 
 ```bash
 export OPENAI_API_KEY='your-api-key'
 ```
 
-3. Run the TTS script:
+2. Run the TTS script:
 
 ```bash
 python tts.py <text> <path_to_speech_file>
@@ -88,37 +64,11 @@ python tts.py <text> <path_to_speech_file>
 
 This will create a speech file at the specified path.
 
-## Running the Web Interface
-
-To run the web interface, follow these steps:
-
-1. Ensure that the virtual environment is activated.
-
-2. Run the Flask application:
-
-```bash
-python app.py
-```
-
-3. Open your web browser and navigate to `http://127.0.0.1:5000` to access the web interface.
-
-## Using the Web Interface
-
-1. Open your web browser and navigate to `http://127.0.0.1:5000`.
-
-2. Enter the text you want to convert to speech in the provided form.
-
-3. Click the "Submit" button.
-
-4. Download the generated speech file by clicking the provided link.
-
 ## Running CTRF Annotations
 
 To run CTRF annotations, follow these steps:
 
-1. Ensure that the virtual environment is activated.
-
-2. Run the CTRF annotations:
+1. Run the CTRF annotations:
 
 ```bash
 npx github-actions-ctrf report.json
