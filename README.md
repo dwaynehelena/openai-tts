@@ -1,8 +1,8 @@
-# FlaskApp
+# Project
 
 ## Purpose of the Project
 
-This project is a Flask web application that demonstrates the use of Flask framework to create a simple web application. The application includes basic functionalities such as routing, templates, and static files.
+This project demonstrates the use of Python to create a simple application. The application includes basic functionalities such as routing, templates, and static files.
 
 ## Prerequisites and Dependencies
 
@@ -56,14 +56,14 @@ pip install -r requirements.txt
 
 ## Running the Code
 
-To run the Flask application, follow these steps:
+To run the application, follow these steps:
 
 1. Ensure that the virtual environment is activated.
 
-2. Run the Flask application:
+2. Run the application:
 
 ```bash
-flask run
+python app.py
 ```
 
 3. Open your web browser and navigate to `http://127.0.0.1:5000` to see the application in action.
