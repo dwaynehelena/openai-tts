@@ -16,7 +16,7 @@ class TestTTS(unittest.TestCase):
         # Call the function to create speech
         from tts import create_speech
         speech_file_path = Path(__file__).parent.parent / "speech.mp3"
-        create_speech(speech_file_path)
+        create_speech("Test text", speech_file_path)
 
         # Check if the speech file was created
         self.assertTrue(speech_file_path.exists())
@@ -36,7 +36,7 @@ class TestTTS(unittest.TestCase):
         speech_file_path = Path(__file__).parent.parent / "speech.mp3"
 
         with self.assertLogs(level='ERROR') as log:
-            create_speech(speech_file_path)
+            create_speech("Test text", speech_file_path)
             self.assertIn("An error occurred while creating the speech: Test error", log.output[0])
 
 if __name__ == '__main__':
