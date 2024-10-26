@@ -88,6 +88,29 @@ python tts.py
 
 This will create a speech file named `speech.mp3` in the project directory.
 
+## Running the Web Interface
+
+To run the web interface, follow these steps:
+
+1. Ensure that the virtual environment is activated.
+
+2. Run the Flask application:
+
+```bash
+python app.py
+```
+
+3. Open your web browser and navigate to `http://127.0.0.1:5000` to access the web interface.
+
+## Using the Web Interface
+
+1. Open your web browser and navigate to `http://127.0.0.1:5000`.
+
+2. Enter the text you want to convert to speech in the provided form.
+
+3. Click the "Submit" button.
+
+4. Download the generated speech file by clicking the provided link.
 
 ## Running CTRF Annotations
 

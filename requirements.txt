@@ -2,3 +2,4 @@ pytest
 coverage
 pytest-json-ctrf
 openai
+flask
