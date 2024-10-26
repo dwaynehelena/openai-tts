@@ -67,3 +67,19 @@ flask run
 ```
 
 3. Open your web browser and navigate to `http://127.0.0.1:5000` to see the application in action.
+
+## Running CTRF Annotations
+
+To run CTRF annotations, follow these steps:
+
+1. Ensure that the virtual environment is activated.
+
+2. Run the CTRF annotations:
+
+```bash
+npx github-actions-ctrf path-to-your-ctrf-report.json
+```
+
+## GitHub Action Workflow for CTRF Annotations
+
+This project includes a GitHub Action workflow for running CTRF annotations. The workflow is defined in the `.github/workflows/greetings.yml` file and is triggered on push, pull request, and issue events.
