@@ -68,6 +68,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Run CTRF annotations
-        run: npx github-actions-ctrf path-to-your-ctrf-report.json
+      - name: Run CTRF 
+        run: pytest --ctrf report.json
+        if: always()
+  - name: Run CTRF annotations
+        run: npx github-actions-ctrf report.json
         if: always()
