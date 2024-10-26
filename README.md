@@ -46,6 +46,18 @@ npm start
 
 2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
+## Running the React Application
+
+To run the React application, follow these steps:
+
+1. Run the React application:
+
+```bash
+npm start
+```
+
+2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
+
 ## Running the TTS Script
 
 To run the TTS script (`tts.py`), follow these steps:
