@@ -4,12 +4,20 @@
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python"]
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers"
+      ]
     }
   },
   "tasks": {
     "test": "pytest",
     "build": "pip install -r requirements.txt",
-    "launch": "flask run"
+    "launch": "flask run",
+    "coverage": "coverage run -m pytest && coverage report",
+    "lint": "pylint **/*.py && flake8 ."
   }
 }
