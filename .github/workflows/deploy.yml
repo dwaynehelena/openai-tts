@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
-
       - name: Set up Personal Access Token
         run: echo "MY_GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> $GITHUB_ENV
 
@@ -34,8 +31,14 @@ jobs:
             exit 1
           fi
 
+      - name: Install Jekyll
+        run: sudo gem install jekyll bundler
+
+      - name: Build Jekyll site
+        run: jekyll build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./_site
