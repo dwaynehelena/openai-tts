@@ -121,7 +121,7 @@ To deploy the application using GitHub Actions, you need to use a personal acces
 
 ```yaml
 with:
-  github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  github_token: ${{ secrets.MY_GITHUB_TOKEN }}
   publish_dir: ./build
 ```
 
@@ -129,23 +129,23 @@ with:
 
 ```yaml
 - name: Set up Personal Access Token
-  run: echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> $GITHUB_ENV
+  run: echo "MY_GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> $GITHUB_ENV
 ```
 
 ### Verifying the Presence of the Personal Access Token
 
-Before proceeding with the deployment, it is important to verify the presence of the `PERSONAL_ACCESS_TOKEN` secret. This ensures that the deployment process will not fail due to a missing or improperly configured token.
+Before proceeding with the deployment, it is important to verify the presence of the `MY_GITHUB_TOKEN` secret. This ensures that the deployment process will not fail due to a missing or improperly configured token.
 
 1. Open the `.github/workflows/deploy.yml` file.
-2. Add a step to verify the presence of the `PERSONAL_ACCESS_TOKEN` secret before the deployment step:
+2. Add a step to verify the presence of the `MY_GITHUB_TOKEN` secret before the deployment step:
 
 ```yaml
 - name: Verify Personal Access Token
   run: |
-    if [ -z "${{ secrets.PERSONAL_ACCESS_TOKEN }}" ]; then
-      echo "Error: PERSONAL_ACCESS_TOKEN is not set."
+    if [ -z "${{ secrets.MY_GITHUB_TOKEN }}" ]; then
+      echo "Error: MY_GITHUB_TOKEN is not set."
       exit 1
     fi
 ```
 
-By following these steps, you will ensure that the GitHub Actions bot has the necessary permissions to push to the `gh-pages` branch and that the `PERSONAL_ACCESS_TOKEN` secret is properly configured.
+By following these steps, you will ensure that the GitHub Actions bot has the necessary permissions to push to the `gh-pages` branch and that the `MY_GITHUB_TOKEN` secret is properly configured.
