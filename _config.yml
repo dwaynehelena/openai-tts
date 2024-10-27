@@ -1,4 +1,4 @@
 title: "OpenAI TTS"
 description: "A project to convert text to speech using OpenAI."
 baseurl: "/openai-tts"
-theme: minima
+theme: jekyll-theme-cayman-blog
