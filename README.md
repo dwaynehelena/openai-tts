@@ -1,4 +1,5 @@
 # Project
+[![CodeQL](https://github.com/dwaynehelena/openai-tts/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/github-code-scanning/codeql)
 
 ## Setting Up the Development Environment
 
