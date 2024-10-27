@@ -25,17 +25,17 @@ jobs:
         run: npm run build
 
       - name: Set up Personal Access Token
-        run: echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> $GITHUB_ENV
+        run: echo "MY_GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Verify Personal Access Token
         run: |
-          if [ -z "${{ secrets.PERSONAL_ACCESS_TOKEN }}" ]; then
-            echo "Error: PERSONAL_ACCESS_TOKEN is not set."
+          if [ -z "${{ secrets.MY_GITHUB_TOKEN }}" ]; then
+            echo "Error: MY_GITHUB_TOKEN is not set."
             exit 1
           fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           publish_dir: ./build
