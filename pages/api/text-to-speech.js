@@ -17,8 +17,8 @@ export default async function handler(req, res) {
   const openai = new OpenAIApi(configuration);
 
   try {
-    const response = await openai.createSpeech({
-      model: "tts-1",
+    const response = await openai.createTranscription({
+      model: "whisper-1",
       input: text,
       voice: "alloy", // You can explore other voices
       response_format: "mp3",
