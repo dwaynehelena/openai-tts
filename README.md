@@ -17,10 +17,22 @@ cd openai-tts
 npm install
 ```
 
-## Running the Next.js Application
+## Building and Deploying the Jekyll Site
+
+To build and deploy the Jekyll site, follow these steps:
+
+1. Install Jekyll and Bundler:
 
 ```bash
-npm run dev
+gem install jekyll bundler
 ```
 
-2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
+2. Build the Jekyll site:
+
+```bash
+jekyll build
+```
+
+3. Deploy the site to GitHub Pages:
+
+The deployment is handled automatically by the GitHub Actions workflow defined in `.github/workflows/deploy.yml`. Simply push your changes to the `main` branch, and the site will be built and deployed to GitHub Pages.
