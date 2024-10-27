@@ -1,6 +1,6 @@
 # Project
 [![CodeQL](https://github.com/dwaynehelena/openai-tts/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/github-code-scanning/codeql)
-
+[![Dependabot Updates](https://github.com/dwaynehelena/openai-tts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/dependabot/dependabot-updates)
 ## Setting Up the Development Environment
 
 To set up the development environment, follow these steps:
