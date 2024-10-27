@@ -17,12 +17,10 @@ cd openai-tts
 npm install
 ```
 
-2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
-
-## Running the React Application
+## Running the Next.js Application
 
 ```bash
-npm start
+npm run dev
 ```
 
 2. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
