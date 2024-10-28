@@ -32,10 +32,10 @@ jobs:
           fi
 
       - name: Build Next.js application
-        run: npm run build
+        run: sudo npm run build
 
       - name: Copy index.html to root directory
-        run: cp pages/index.html ./out/index.html
+        run: sudo cp pages/index.html ./out/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
