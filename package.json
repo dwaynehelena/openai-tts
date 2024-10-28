@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prebuild": "mkdir -p ./out"
   },
   "dependencies": {
     "next": "15.0.1",
