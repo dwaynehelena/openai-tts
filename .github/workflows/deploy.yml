@@ -38,10 +38,10 @@ jobs:
         run: sudo gem update rake
 
       - name: Install Bundler dependencies
-        run: bundle install
+        run: sudo bundle install
 
       - name: Build Jekyll site
-        run: jekyll build
+        run: sudo jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
