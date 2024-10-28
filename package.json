@@ -1,6 +1,6 @@
 {
   "name": "openai-tts",
-  "homepage": "https://dwaynehelena.github.io/openai-tts",
+  "homepage": "https://dwaynehelena.github.io/openai-tts/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
