@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18
 
 ARG USER=vscode
 ARG DEBIAN_FRONTEND=noninteractive
