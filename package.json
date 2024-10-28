@@ -7,9 +7,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^15.0.1",
+    "next": "15.0.1",
     "openai": "^4.68.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": "18"
   }
 }
