@@ -31,20 +31,11 @@ jobs:
             exit 1
           fi
 
-      - name: Install Jekyll
-        run: sudo gem install jekyll bundler
-
-      - name: Update rake gem
-        run: sudo gem update rake
-
-      - name: Install Bundler dependencies
-        run: sudo bundle install
-
-      - name: Build Jekyll site
-        run: sudo jekyll build
+      - name: Build Next.js application
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./out
