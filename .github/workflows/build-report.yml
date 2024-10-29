@@ -44,6 +44,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const github = require('@actions/github');
+            const context = github.context;
             const { SUCCESS_RATE, FAILURE_RATE } = process.env;
             const comment = `Build Success Rate: ${SUCCESS_RATE}%\nBuild Failure Rate: ${FAILURE_RATE}%`;
             github.issues.createComment({
