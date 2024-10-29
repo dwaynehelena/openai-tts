@@ -2,6 +2,7 @@
 [![CodeQL](https://github.com/dwaynehelena/openai-tts/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/github-code-scanning/codeql)
 [![Dependabot Updates](https://github.com/dwaynehelena/openai-tts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/dependabot/dependabot-updates)
 [![Deploy to GitHub Pages](https://github.com/dwaynehelena/openai-tts/actions/workflows/deploy.yml/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/deploy.yml)
+[![Build Report](https://github.com/dwaynehelena/openai-tts/actions/workflows/build-report.yml/badge.svg)](https://github.com/dwaynehelena/openai-tts/actions/workflows/build-report.yml)
 
 ## Setting Up the Development Environment
 
@@ -45,3 +46,9 @@ Note: The Jekyll site uses the `minima` theme.
 ## Important Note for GitHub Pages
 
 For the site to be correctly displayed on GitHub Pages, ensure that the `index.html` file is present in the root directory of the repository. This is necessary for GitHub Pages to recognize and serve the main page of the site.
+
+## Build Success and Failure Rate Report
+
+A new GitHub Action has been added to report the success and failure rates of the builds. This action runs on pull requests and pushes to the main branch. The results are posted as a comment on the PR.
+
+To view the build success and failure rate report, check the badge at the top of this README or visit the [GitHub Actions page](https://github.com/dwaynehelena/openai-tts/actions/workflows/build-report.yml).

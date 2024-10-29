@@ -1,0 +1,51 @@
+name: Build Report
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run build
+
+      - name: Calculate build success and failure rates
+        id: calculate-rates
+        run: |
+          SUCCESS_COUNT=$(grep -c "Build succeeded" build.log || true)
+          FAILURE_COUNT=$(grep -c "Build failed" build.log || true)
+          TOTAL_COUNT=$((SUCCESS_COUNT + FAILURE_COUNT))
+          SUCCESS_RATE=$((SUCCESS_COUNT * 100 / TOTAL_COUNT))
+          FAILURE_RATE=$((FAILURE_COUNT * 100 / TOTAL_COUNT))
+          echo "SUCCESS_RATE=$SUCCESS_RATE" >> $GITHUB_ENV
+          echo "FAILURE_RATE=$FAILURE_RATE" >> $GITHUB_ENV
+
+      - name: Post build report as PR comment
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { SUCCESS_RATE, FAILURE_RATE } = process.env;
+            const comment = `Build Success Rate: ${SUCCESS_RATE}%\nBuild Failure Rate: ${FAILURE_RATE}%`;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            })
