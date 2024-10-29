@@ -3,7 +3,7 @@
   "homepage": "https://dwaynehelena.github.io/openai-tts/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build > build.log 2>&1",
     "start": "next start",
     "prebuild": "mkdir -p ./out"
   },

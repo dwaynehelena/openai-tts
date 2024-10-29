@@ -22,8 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create empty build log
+        run: touch build.log
+
       - name: Run build
-        run: npm run build
+        run: npm run build > build.log 2>&1
 
       - name: Calculate build success and failure rates
         id: calculate-rates
