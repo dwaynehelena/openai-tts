@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Chatbot from "../components/Chatbot";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -52,6 +53,7 @@ export default function Home() {
           {isLoading ? "Converting..." : "Convert to Speech"}
         </button>
       </form>
+      <Chatbot />
     </div>
   );
 }
