@@ -52,3 +52,34 @@ For the site to be correctly displayed on GitHub Pages, ensure that the `index.h
 A new GitHub Action has been added to report the success and failure rates of the builds. This action runs on pull requests and pushes to the main branch. The results are posted as a comment on the PR.
 
 To view the build success and failure rate report, check the badge at the top of this README or visit the [GitHub Actions page](https://github.com/dwaynehelena/openai-tts/actions/workflows/build-report.yml).
+
+## Setting Up the Chatbot Feature
+
+To set up the chatbot feature, follow these steps:
+
+1. Ensure you have the required dependencies installed:
+
+```bash
+npm install
+```
+
+2. Add your OpenAI API key to the `.env.local` file:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+## Using the Chatbot
+
+To use the chatbot, follow these steps:
+
+1. Open your browser and navigate to `http://localhost:3000`.
+2. You will see the chatbot interface on the main page.
+3. Type your message in the input field and click "Send".
+4. The chatbot will respond to your message using OpenAI's API.
